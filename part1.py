@@ -19,24 +19,19 @@ for items in coords:
 
 	if(abs(xline) != abs(yline)):
 		if(xline > 0):
-			for x in range(x1, x2+1):
-				if coordPlane[y1][x] != 2:
-					coordPlane[y1][x] += 1
+			for x in range(x1, x2+1):coordPlane[y1][x] += 1
 		if(xline < 0):
 			for x in range(x1, x2-1, -1):
-				if coordPlane[y1][x] != 2:
-					coordPlane[y1][x] += 1
+				if coordPlane[y1][x] != 2:coordPlane[y1][x] += 1
 		if(yline < 0):
 			for y in range(y1, y2-1, -1):
-				if coordPlane[y][x1] != 2:
-					coordPlane[y][x1] += 1
+				if coordPlane[y][x1] != 2:coordPlane[y][x1] += 1
 		if(yline > 0):
 			for y in range(y1, y2+1):
-				if coordPlane[y][x1] != 2:
-					coordPlane[y][x1] += 1
+				if coordPlane[y][x1] != 2:coordPlane[y][x1] += 1
 value = 0
 for i in coordPlane:
 	for j in i:
-		if j == 2:
+		if j > 1:
 			value += 1
 print(value)
